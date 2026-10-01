@@ -6,5 +6,9 @@ namespace Osszgyak
 {
     internal class Penzugy
     {
+        public static double BruttoArSzamitas ( double nettoAr)
+        {
+            return nettoAr * 1.27;
+        }
     }
 }
