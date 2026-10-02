@@ -54,22 +54,22 @@ namespace Osszgyak
             get { return osszesLetezoEszkoz; }
         }
         public Eszkozok(string cikkszam, string nev, int beszerzesiAr)
-            : this(cikkszam, nev, beszerzesiAr, 0)
-        {
-        }
-        public Eszkozok(string cikkszam, string nev, int beszerzesiAr, int raktarKeszlet)
         {
             Cikkszam = cikkszam;
             Nev = nev;
             BeszerzesiAr = beszerzesiAr;
-            RaktarKeszlet = raktarKeszlet;
+            raktarKeszlet = 0;
+        }
+        public Eszkozok(string cikkszam, string nev, int beszerzesiAr, int raktarKeszlet) : this(cikkszam, nev, beszerzesiAr)
+        {
 
+            RaktarKeszlet = raktarKeszlet;
             osszesLetezoEszkoz++;
         }
 
         public override string ToString()
         {
-            return $"{Cikkszam}, {Nev} Beszerzési ár: {BeszerzesiAr} Ft, Készlet: {RaktarKeszlet} db";
+            return $"[{Cikkszam}] {Nev} | Beszerzési ár: {BeszerzesiAr} Ft | Készlet: {RaktarKeszlet} db";
         }
 
         public bool Eladas(int db)
